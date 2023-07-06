@@ -1,0 +1,8 @@
+<h2>navigation</h2>
+<ul>
+    {% for nav in site.data.nav %}
+      <li>
+        <a href="/{{ nav.link }}">{{ nav.alias }}</a>
+      </li>
+    {% endfor %}
+</ul>

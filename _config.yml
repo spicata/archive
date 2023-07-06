@@ -1,0 +1,15 @@
+url: "https://spicata.99000000.xyz"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "simple"
+
+plugins:
+  - jekyll-last-modified-at
+  - jekyll-toc
+
+# Optional. The default date format, used if none is specified in the tag.
+last-modified-at:
+    date-format: '%Y-%m-%d'
