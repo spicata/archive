@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+
+    <meta name="description" content="yall need to learn markdown dammit">
+
+<meta name="keywords" content="notes, mint fresh notes, 99000000, spicata">
+<meta name="author" content="spicata mentha">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.md MasterClass</title>
+
+
+    <link rel="stylesheet" href="/assets/css/simple.css">
+
+
+
+    <link rel="stylesheet" href="/assets/css/sans.css">
+
+
+
+
+
+  </head>
+  <body>
+    
+      <h1>.md MasterClass</h1>
+    
+
+    
+      <p class="datetop">Created: 2023-07-02</p>
+    
+    <p class="datetop">Last modified: 2023-07-10</p>
+
+    
+      <p><strong>🌱 This article is growing...</strong></p>
+    
+    
+
+    
+      <div class="description">
+        <p><p>yall need to learn markdown dammit</p>
+</p>
+      </div>
+    
+    <hr class="descriptionbar">
+
+    
+
+    <h2>Table of Contents</h2>
+    
+
+    <ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />linking please</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />also yaml frontmatting</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />tables (why not)</li>
+</ul>
+
+<p>It has come to my (and Edward’s) attention that, despite the large amount of people in the Town using Markdown, lots of them don’t actually know how to use it. So, uh, here’s my experiences + tips + other informations about Markdown.</p>
+
+<h2 id="the-hell-is-markdown">“the hell is markdown?”</h2>
+
+<p>You know how, in Word documents, you can bold stuff, make things italics, change size, and more? Yeah, that is because Word documents are rich text documents. Markdown is unlike that. Markdown is a plain-text file, and it functions kind of “what you see is what you get”. It also allows you to style things more directly, through the use of things like *asterisks and #hashtags.</p>
+
+<p>Great thing about Markdown is that it is created specifically to be transformed into HTML, so that’s pretty great.</p>
+
+<h2 id="the-power-of-links">the power of links</h2>
+
+<p>A great thing about Markdown is that it allows you to make links between different notes rather ‘easily’. The general syntax looks something like:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">alias/name of the link</span><span class="p">](</span><span class="sx">link/to/file</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>However, something to note is that the link to the file should be relative to the current file, otherwise, it will not work.</p>
+
+<h3 id="working-with-directories">working with directories</h3>
+
+<p>Let’s have a look at an example folder:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root/
+├── file1.md
+├── file2.md
+├── file3.md
+├── folder1
+│   ├── child1
+│   │   └── fileb.md
+│   ├── child2
+│   └── filea.md
+└── folder2
+    └── filec.md
+</code></pre></div></div>
+
+<p>First we need to understand some terms:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">folder1</code> is the ‘parent folder’ of <code class="language-plaintext highlighter-rouge">child1</code> (it is at a higher level, so to speak)</li>
+  <li><code class="language-plaintext highlighter-rouge">child1</code> is the ‘child folder’ of <code class="language-plaintext highlighter-rouge">folder1</code> (it is at a lower level)</li>
+  <li><code class="language-plaintext highlighter-rouge">folder1</code> and <code class="language-plaintext highlighter-rouge">folder2</code> are ‘sibling folders’. Same goes for <code class="language-plaintext highlighter-rouge">child1</code> and <code class="language-plaintext highlighter-rouge">child2</code></li>
+</ul>
+
+<p>Here are some examples<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To link from <span class="sb">`file1.md`</span> to <span class="sb">`file2.md`</span> is to write this in <span class="sb">`file1.md`</span>:
+
+<span class="p">[</span><span class="nv">link to file 2</span><span class="p">](</span><span class="sx">file2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pretty simple. It gets harder to go from <span class="sb">`file1.md`</span> to <span class="sb">`filea.md`</span>, which is in <span class="sb">`folder1`</span>. (put this in <span class="sb">`file1.md`</span>):
+
+<span class="p">[</span><span class="nv">link to file a</span><span class="p">](</span><span class="sx">folder1/filea</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>But what if I want to go from <span class="sb">`filea.md`</span> to <span class="sb">`filec.md`</span>, which are in two different folders?
+
+<span class="p">[</span><span class="nv">link to file c</span><span class="p">](</span><span class="sx">../folder2/filec</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Finally, to get from <span class="sb">`fileb.md`</span> to <span class="sb">`filec.md`</span>, do:
+
+<span class="p">[</span><span class="nv">link to file c</span><span class="p">](</span><span class="sx">../../folder2/filec</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="using-yaml-dammit">using YAML dammit</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">.md</span><span class="nv"> </span><span class="s">MasterClass"</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">simple</span>
+<span class="na">description</span><span class="pi">:</span> 
+<span class="na">showdescription</span><span class="pi">:</span> <span class="kc">false</span>
+<span class="na">cdate</span><span class="pi">:</span> <span class="s">2023-07-02</span>
+<span class="na">state</span><span class="pi">:</span> <span class="s">growing</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>That is the YAML frontmatter for this page that you are on. Essentially, the YAML frontmatter is a place where you ‘define’ a bunch of stuff. For example, on <a href="https://github.com/spicata/jsp">my Jekyll Starter Pack</a>, the only value relevant in the YAML frontmatter is the <code class="language-plaintext highlighter-rouge">title</code> value. Both Jekyll and Hugo (Quartz) allow you to use the variables that you put into the frontmatter.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>If you have some experience with Markdown, you may notice that these links are missing the .md extension at the end. This is intentional, as Jekyll will not link properly if it has this .md extension, as it will end up linking to <code class="language-plaintext highlighter-rouge">filec.md</code> (the raw file) and not <code class="language-plaintext highlighter-rouge">filec.html</code> (the processed file). <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Also, if you use a Markdown app such as Obsidian, you can do this automatically by going into settings &gt; options &gt; files &amp; links, then turning then turning off Wikilinks and changing the “new link format” to relative path to file. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    <p>found on <a href="https://spicata.99000000.xyz/">spicata.99000000.xyz</a>. no rights reserved.<br>published by <a href="https://www.99000000.xyz/">99 000 000.xyz</a>.</p>
+  </body>
+</html>

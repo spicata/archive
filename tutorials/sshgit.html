@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+
+    <meta name="description" content="A plethora of notes written by a little guy called spicata mentha, with hopes that his page will on day appear on Google search (please index me Google).">
+
+<meta name="keywords" content="notes, mint fresh notes, 99000000, spicata">
+<meta name="author" content="spicata mentha">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSH Key on Github</title>
+
+
+    <link rel="stylesheet" href="/assets/css/simple.css">
+
+
+
+    <link rel="stylesheet" href="/assets/css/sans.css">
+
+
+
+
+
+  </head>
+  <body>
+    
+      <h1>SSH Key on Github</h1>
+    
+
+    
+    <p class="datetop">Last modified: 2023-07-10</p>
+
+    
+    
+
+    
+    <hr class="descriptionbar">
+
+    
+
+    <h2>Table of Contents</h2>
+    
+
+    <ol>
+  <li><code class="language-plaintext highlighter-rouge">$ ssh-keygen -t ed25519 -C "your_email@example.com"</code>
+    <ul>
+      <li>e.g. <code class="language-plaintext highlighter-rouge">$ ssh-keygen -t ed25519 -C "pixelandian@gmail.com"</code></li>
+    </ul>
+  </li>
+  <li>Skip all parameters</li>
+  <li><code class="language-plaintext highlighter-rouge">$ ssh-add ~/.ssh/id_ed25519</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cat ~/.ssh/id_ed25519.pub</code></li>
+  <li>Copy the results</li>
+  <li>Go to <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> and make a new key with the copied result</li>
+</ol>
+
+    <p>found on <a href="https://spicata.99000000.xyz/">spicata.99000000.xyz</a>. no rights reserved.<br>published by <a href="https://www.99000000.xyz/">99 000 000.xyz</a>.</p>
+  </body>
+</html>
